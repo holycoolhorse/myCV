@@ -446,6 +446,25 @@
             font-size: 0.9rem;
         }
         
+        /* Skills Section */
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        
+        .tag {
+            padding: 0.5rem 0.9rem;
+            border-radius: 999px;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            color: var(--text-primary);
+            font-size: 0.95rem;
+            backdrop-filter: blur(10px);
+        }
+        
         /* Contact Section */
         .contact-grid {
             display: grid;
@@ -570,6 +589,7 @@
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -581,6 +601,7 @@
             <div class="mobile-menu">
                 <a href="#about" onclick="toggleMenu()">About</a>
                 <a href="#experience" onclick="toggleMenu()">Experience</a>
+                <a href="#skills" onclick="toggleMenu()">Skills</a>
                 <a href="#projects" onclick="toggleMenu()">Projects</a>
                 <a href="#contact" onclick="toggleMenu()">Contact</a>
             </div>
@@ -652,10 +673,70 @@
         </div>
     </section>
 
+    <!-- Skills Section -->
+    <section id="skills">
+        <p class="section-subtitle fade-in">What I Work With</p>
+        <h2 class="section-title fade-in">Skills</h2>
+        <div class="skill-tags fade-in">
+            <span class="tag">Java</span>
+            <span class="tag">C#</span>
+            <span class="tag">Python</span>
+            <span class="tag">Unity (2D/3D)</span>
+            <span class="tag">SQL</span>
+            <span class="tag">Object-Oriented Programming</span>
+            <span class="tag">Interface Design</span>
+            <span class="tag">Problem Solving</span>
+            <span class="tag">Team Collaboration</span>
+            <span class="tag">Frontend Basics</span>
+        </div>
+    </section>
+
     <!-- Projects Section -->
     <section id="projects">
         <p class="section-subtitle fade-in">Browse My Recent</p>
         <h2 class="section-title fade-in">Projects</h2>
+        <div class="projects-grid fade-in">
+            <div class="project-card">
+                <div class="project-image">⭐</div>
+                <div class="project-content">
+                    <h3 class="project-title">EternalGames Jira</h3>
+                    <p>Game development workflow and issues tracking.</p>
+                    <div class="project-buttons">
+                        <a href="https://github.com/holycoolhorse/eternalgames-jira" class="btn btn-secondary btn-small" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-image">⭐</div>
+                <div class="project-content">
+                    <h3 class="project-title">2D Ana Oyun</h3>
+                    <p>Unity 2D main game repository.</p>
+                    <div class="project-buttons">
+                        <a href="https://github.com/YGGameStudios/2D-Ana-Oyun/tree/main/2D%20Ana%20Oyun" class="btn btn-secondary btn-small" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-image">⭐</div>
+                <div class="project-content">
+                    <h3 class="project-title">Pet App</h3>
+                    <p>Application repository with features for pet management.</p>
+                    <div class="project-buttons">
+                        <a href="https://github.com/holycoolhorse/petapp" class="btn btn-secondary btn-small" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-image">⭐</div>
+                <div class="project-content">
+                    <h3 class="project-title">VR Tabanlı Bağımlılık Farkındalığı Oyunu</h3>
+                    <p>VR-based awareness game project.</p>
+                    <div class="project-buttons">
+                        <a href="https://github.com/EmreOkcelen/170421929_Emre_Okcelen_VRTabanliBagimlilikFarkindaligiOyunu" class="btn btn-secondary btn-small" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="projects-grid" id="projects-grid">
             <!-- Projects will be loaded dynamically from GitHub -->
         </div>
