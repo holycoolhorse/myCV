@@ -840,10 +840,8 @@
                     return;
                 }
                 filtered.forEach(repo => {
-                    const hasHomepage = repo.homepage && repo.homepage.trim() !== '';
-                    const hasPages = repo.has_pages === true;
-                    const pagesUrl = hasPages ? `https://${username}.github.io/${repo.name}/` : '';
-                    const demoUrl = hasHomepage ? repo.homepage : (hasPages ? pagesUrl : '');
+                    const hasHomepage = typeof repo.homepage === 'string' && repo.homepage.trim() !== '' && /^https?:\/\//i.test(repo.homepage.trim());
+                    const demoUrl = hasHomepage ? repo.homepage.trim() : '';
                     const card = document.createElement('div');
                     card.className = 'project-card fade-in';
                     card.innerHTML = `
