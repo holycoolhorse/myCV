@@ -841,6 +841,9 @@
                 }
                 filtered.forEach(repo => {
                     const hasHomepage = repo.homepage && repo.homepage.trim() !== '';
+                    const hasPages = repo.has_pages === true;
+                    const pagesUrl = hasPages ? `https://${username}.github.io/${repo.name}/` : '';
+                    const demoUrl = hasHomepage ? repo.homepage : (hasPages ? pagesUrl : '');
                     const card = document.createElement('div');
                     card.className = 'project-card fade-in';
                     card.innerHTML = `
@@ -850,7 +853,7 @@
                             <p>${repo.description ? repo.description : 'No description provided.'}</p>
                             <div class="project-buttons">
                                 <a href="${repo.html_url}" class="btn btn-secondary btn-small" target="_blank" rel="noopener noreferrer">GitHub</a>
-                                ${hasHomepage ? `<a href="${repo.homepage}" class="btn btn-primary btn-small" target="_blank" rel="noopener noreferrer">Live Demo</a>` : ''}
+                                ${demoUrl ? `<a href="${demoUrl}" class="btn btn-primary btn-small" target="_blank" rel="noopener noreferrer">Live Demo</a>` : ''}
                             </div>
                         </div>
                     `;
